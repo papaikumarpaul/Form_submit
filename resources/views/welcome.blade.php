@@ -11,59 +11,68 @@
 </head>
 
 <body>
-    <div class="container">
+
+    <div class="container py-4">
         @if (session('success'))
         <div class="alert alert-success mt-3">
             {{ session('success') }}
         </div>
         @endif
-        <form method="POST" action="{{ route('store') }}" enctype="multipart/form-data" class="needs-validation"
-            novalidate>
-            @csrf
 
-            <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="John Das" required>
-                <div class="invalid-feedback">Please enter your full name.</div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-10">
+                <form method="POST" action="{{ route('store') }}" enctype="multipart/form-data" class="needs-validation"
+                    novalidate>
+                    @csrf
+
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="John Das" required>
+                        <div class="invalid-feedback">Please enter your full name.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com"
+                            required>
+                        <div class="invalid-feedback">Please enter a valid email.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="7362924077"
+                            pattern="[0-9]{10}" required>
+                        <div class="invalid-feedback">Please enter a valid 10-digit contact number.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="city" class="form-label">City</label>
+                        <select class="form-select" id="city" name="city" required>
+                            <option selected disabled value="">Select City</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a city.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Profile_Picture" class="form-label">Profile Picture</label>
+                        <input type="file" class="form-control" id="Profile_Picture" name="profile_picture"
+                            accept="image/*" required>
+                        <div class="invalid-feedback">Please upload your profile picture.</div>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
+                </form>
             </div>
-
-            <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com"
-                    required>
-                <div class="invalid-feedback">Please enter a valid email.</div>
-            </div>
-
-            <div class="mb-3">
-                <label for="phone" class="form-label">Phone</label>
-                <input type="tel" class="form-control" id="phone" name="phone" placeholder="+91-7362924077"
-                    pattern="[0-9]{10}" required>
-                <div class="invalid-feedback">Please enter a valid 10-digit contact number.</div>
-            </div>
-
-            <div class="mb-3">
-                <label for="city" class="form-label">City</label>
-                <select class="form-select" id="city" name="city" required>
-                    <option selected disabled value="">Select City</option>
-                    <option value="Kolkata">Kolkata</option>
-                    <option value="Delhi">Delhi</option>
-                    <option value="Mumbai">Mumbai</option>
-                    <option value="Bangalore">Bangalore</option>
-                </select>
-                <div class="invalid-feedback">Please select a city.</div>
-            </div>
-
-            <div class="mb-3">
-                <label for="Profile_Picture" class="form-label">Profile Picture</label>
-                <input type="file" class="form-control" id="Profile_Picture" name="profile_picture" accept="image/*"
-                    required>
-                <div class="invalid-feedback">Please upload your profile picture.</div>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-
+        </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
     </script>
