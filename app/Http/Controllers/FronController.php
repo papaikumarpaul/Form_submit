@@ -34,4 +34,9 @@ class FronController extends Controller
         $userDetails->save();
         return redirect()->route('home')->with('success', 'Your application has been submitted successfully.');
     }
+    public function show()
+    {
+        $user = Submit::all();
+        return $user;
+    }
 }
