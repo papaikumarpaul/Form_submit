@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('submissions', function (Blueprint $table) {
             $table->string('name');
             $table->string('email');
+            $table->string('password');
             $table->string('phone');
             $table->string('city');
-            $table->string('profile_picture');
+            // $table->string('profile_picture');
             $table->id();
             $table->timestamps();
         });

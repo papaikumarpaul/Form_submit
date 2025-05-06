@@ -37,7 +37,12 @@
                             required>
                         <div class="invalid-feedback">Please enter a valid email.</div>
                     </div>
-
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="password"
+                            required>
+                        <div class="invalid-feedback">Please enter a Password.</div>
+                    </div>
                     <div class="mb-3">
                         <label for="phone" class="form-label">Phone</label>
                         <input type="tel" class="form-control" id="phone" name="phone" placeholder="7362924077"
@@ -57,12 +62,12 @@
                         <div class="invalid-feedback">Please select a city.</div>
                     </div>
 
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label for="Profile_Picture" class="form-label">Profile Picture</label>
                         <input type="file" class="form-control" id="Profile_Picture" name="profile_picture"
                             accept="image/*" required>
                         <div class="invalid-feedback">Please upload your profile picture.</div>
-                    </div>
+                    </div> --}}
 
                     <div class="d-grid">
                         <button type="submit" class="btn btn-primary">Submit</button>
